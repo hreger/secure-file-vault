@@ -86,8 +86,6 @@
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                     <compilerArgs>
-                        <arg>--module-path</arg>
-                        <arg>${project.build.directory}/lib</arg>
                         <arg>--add-modules</arg>
                         <arg>javafx.controls,javafx.fxml</arg>
                     </compilerArgs>
@@ -100,8 +98,6 @@
                 <configuration>
                     <mainClass>com.securefilevault.Main</mainClass>
                     <options>
-                        <option>--module-path</option>
-                        <option>${project.build.directory}/lib</option>
                         <option>--add-modules</option>
                         <option>javafx.controls,javafx.fxml</option>
                     </options>
