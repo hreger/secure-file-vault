@@ -25,8 +25,17 @@ if %MAJOR_VERSION% GEQ 22 (
 REM Clean and compile
 mvn clean compile
 
+REM Copy dependencies
+mvn dependency:copy-dependencies -DoutputDirectory=target/lib
+
+REM Set the module path
+set "MODULE_PATH=%CD%\target\lib\*"
+
+echo Starting application...
+echo The application window should appear on your screen.
+
 REM Run the application
-mvn exec:java -Dexec.mainClass="com.securefilevault.Main" -Dexec.args="--add-modules javafx.controls,javafx.fxml"
+java --module-path "%MODULE_PATH%" --add-modules javafx.controls,javafx.fxml -cp target\classes com.securefilevault.Main
 
 echo.
 echo If you see any errors, please check:
