@@ -1,55 +1,129 @@
-# 🔐 Secure File Vault System
+# 🔒 Secure File Vault System
 
-A secure desktop application to **encrypt and decrypt files**, built with **Java 20**, **JavaFX**, and **AES encryption**. It features a modern GUI, secure user authentication, and is extendable for cloud syncing and audit logging.
+A secure file management system that provides end-to-end encryption for your sensitive files. Built with Java and JavaFX, this application ensures your data remains protected with industry-standard encryption algorithms.
+
+## ✨ Features
+
+### Current Features
+- 🔐 **Secure User Authentication**
+  - PBKDF2 password hashing with salt
+  - Secure session management
+  - User registration and login system
+
+- 🗄️ **File Management**
+  - AES-256 encryption for file protection
+  - Secure file storage and retrieval
+  - File list management interface
+
+- 🎨 **User Interface**
+  - Modern JavaFX GUI
+  - Intuitive navigation between screens
+  - Responsive design with error handling
+
+### Future Enhancements
+- 🔄 **Advanced File Operations**
+  - Batch file encryption/decryption
+  - File compression before encryption
+  - Cloud storage integration
+
+- 🔐 **Enhanced Security**
+  - Two-factor authentication (2FA)
+  - Biometric authentication support
+  - Password strength indicators
+  - Session timeout and auto-logout
+
+- 📱 **User Experience**
+  - Dark/Light theme support
+  - Drag-and-drop file support
+  - Progress indicators for file operations
+  - File preview capabilities
+
+- 🔍 **Additional Features**
+  - File sharing with other users
+  - File version history
+  - Secure file deletion
+  - Activity logs and audit trails
+
+## 🛠️ Tech Stack
+
+- **Language**: Java 22
+- **Framework**: JavaFX 24
+- **Database**: SQLite
+- **Encryption**: AES-256, PBKDF2
+- **Build Tool**: Maven
+
+## 📋 Prerequisites
+
+- Java 22 or higher
+- Maven 3.8 or higher
+- JavaFX 24
+- SQLite JDBC driver
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/hreger/secure-file-vault.git
+   cd secure-file-vault
+   ```
+
+2. **Build the project**
+   ```bash
+   .\build.bat  # For Windows
+   ```
+
+3. **Run the application**
+   ```bash
+   .\run.bat    # For Windows
+   ```
+
+## 🏗️ Project Structure
+
+```
+secure-file-vault/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/securefilevault/
+│   │   │       ├── controllers/
+│   │   │       ├── services/
+│   │   │       └── Main.java
+│   │   └── resources/
+│   │       └── fxml/
+│   └── test/
+├── pom.xml
+├── build.bat
+└── run.bat
+```
+
+ScreenShots: 
+image.png
+image.png
+image.png
+image.png
+image.png
+
+## 🔧 Configuration
+
+The application uses the following configuration files:
+- `pom.xml` - Maven project configuration
+- `build.bat` - Build script for Windows
+- `run.bat` - Run script for Windows
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- JavaFX team for the excellent GUI framework
+- SQLite for the lightweight database solution
+- All contributors and users of this project
 
 ---
 
-## 🚀 Features (Initial Version)
-
-- 🔒 **AES File Encryption/Decryption**  
-  Encrypt your files using AES-256 with password-based key derivation. Decryption is allowed only after successful login, ensuring strong protection against unauthorized access.
-
-- 👤 **User Authentication**  
-  Secure registration and login system with password hashing (PBKDF2). Session management maintains user context while ensuring safety.
-
-> 🛠️ _Planned features_:  
-> - Folder-tree view for exploring encrypted directories  
-> - Audit logs to monitor access and changes  
-> - AWS S3 cloud sync support
-
----
-
-## 🧰 Tech Stack
-
-| Component   | Technology                     |
-|-------------|-------------------------------|
-| Language     | Java 20 (with preview features) |
-| GUI          | JavaFX 24                     |
-| Encryption   | Java Cryptography API (AES)   |
-| Database     | SQLite (MySQL supported)      |
-| Build Script | Custom `build.bat` script     |
-
----
-
-## 🗂️ Project Structure
-
-SecureFileVault/ ├── src/ │ └── main/ │ ├── java/ │ │ └── com/freelancetracker/ │ │ ├── Main.java │ │ ├── controllers/ │ │ ├── models/ │ │ └── services/ │ └── resources/ ├── lib/ │ ├── javafx-sdk-24/ │ ├── sqlite-jdbc-3.49.1.0.jar │ └── pdfbox-3.0.4.jar ├── out/ │ └── (compiled output) ├── build.bat └── README.md
-
-
----
-
-## 🏁 Getting Started
-
-### ✅ Prerequisites
-
-- Java 20 installed and `JAVA_HOME` configured correctly  
-- JavaFX SDK 24 ([Download](https://gluonhq.com/products/javafx/))  
-- SQLite JDBC Driver ([Download](https://github.com/xerial/sqlite-jdbc/releases))  
-- (Optional) Apache PDFBox ([Download](https://pdfbox.apache.org/download.html))
-
-### ▶️ Run the App
-
-To compile and run the application:
-
-```bash
-.\build.bat
+Made with ❤️ by [ P Sanjeev Pradeep ]
