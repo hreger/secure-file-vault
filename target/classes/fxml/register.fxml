@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.securefilevault.controllers.RegisterController">
+    <padding>
+        <Insets top="50" right="50" bottom="50" left="50"/>
+    </padding>
+    
+    <Text text="Create New Account" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <Text text="Register to start securing your files" style="-fx-font-size: 14px;"/>
+    
+    <VBox spacing="10" style="-fx-pref-width: 300;">
+        <TextField fx:id="usernameField" promptText="Username"/>
+        <PasswordField fx:id="passwordField" promptText="Password"/>
+        <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password"/>
+        <Button fx:id="registerButton" text="Register" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-pref-width: 300;"/>
+        <Hyperlink fx:id="loginLink" text="Already have an account? Login"/>
+    </VBox>
+    
+    <Label fx:id="errorLabel" style="-fx-text-fill: red;"/>
+</VBox> 

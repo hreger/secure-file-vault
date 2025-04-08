@@ -1,3 +1,4 @@
+com\securefilevault\controllers\RegisterController.class
 com\securefilevault\services\AuthService.class
 com\securefilevault\services\EncryptionService.class
 com\securefilevault\Main.class
