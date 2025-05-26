@@ -67,14 +67,14 @@ A secure file management system that provides end-to-end encryption for your sen
    cd secure-file-vault
    ```
 
-2. **Build the project**
+2. **Build the project (Windows)**
    ```bash
-   .\build.bat  # For Windows
+   .\build.bat
    ```
 
-3. **Run the application**
+3. **Run the application (Windows)**
    ```bash
-   .\run.bat    # For Windows
+   .\run.bat
    ```
 
 ## 🏗️ Project Structure
@@ -87,25 +87,20 @@ secure-file-vault/
 │   │   │   └── com/securefilevault/
 │   │   │       ├── controllers/
 │   │   │       ├── services/
-│   │   │       └── Main.java
+│   │   │       ├── Main.java
+│   │   │       └── module-info.java
 │   │   └── resources/
 │   │       └── fxml/
-│   └── test/
 ├── pom.xml
 ├── build.bat
 └── run.bat
 ```
 
-ScreenShots: 
-image.png
-image.png
-image.png
-image.png
-image.png
+ScreenShots:
 
 ## 🔧 Configuration
 
-The application uses the following configuration files:
+The project's configuration and key scripts include:
 - `pom.xml` - Maven project configuration
 - `build.bat` - Build script for Windows
 - `run.bat` - Run script for Windows
@@ -116,7 +111,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## 🙏 Acknowledgments
 
@@ -126,4 +121,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ by [ P Sanjeev Pradeep ]
+Made with ❤️ by [P Sanjeev Pradeep]
