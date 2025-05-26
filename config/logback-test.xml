@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Test Environment Logging Configuration -->
+
+    <!-- Console Appender with Detailed Test Output -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Test Execution Log Appender -->
+    <appender name="TEST_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/test.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/test.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>5</maxHistory>
+            <totalSizeCap>50MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Test Coverage Log Appender -->
+    <appender name="COVERAGE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/coverage.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/coverage.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>5</maxHistory>
+            <totalSizeCap>50MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Mock Service Log Appender -->
+    <appender name="MOCK_SERVICE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/mock-service.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/mock-service.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>5</maxHistory>
+            <totalSizeCap>50MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Test Security Log Appender -->
+    <appender name="TEST_SECURITY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/test-security.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/test-security.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>5</maxHistory>
+            <totalSizeCap>50MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Logger Configurations -->
+    <logger name="com.securefilevault.test" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="TEST_FILE" />
+    </logger>
+
+    <logger name="com.securefilevault.test.coverage" level="TRACE" additivity="false">
+        <appender-ref ref="COVERAGE" />
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <logger name="com.securefilevault.test.mock" level="DEBUG" additivity="false">
+        <appender-ref ref="MOCK_SERVICE" />
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <logger name="com.securefilevault.test.security" level="DEBUG" additivity="false">
+        <appender-ref ref="TEST_SECURITY" />
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <!-- TestFX Logger -->
+    <logger name="org.testfx" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="TEST_FILE" />
+    </logger>
+
+    <!-- Mockito Logger -->
+    <logger name="org.mockito" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MOCK_SERVICE" />
+    </logger>
+
+    <!-- JaCoCo Logger -->
+    <logger name="org.jacoco" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="COVERAGE" />
+    </logger>
+
+    <!-- Root Logger Configuration -->
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="TEST_FILE" />
+    </root>
+
+</configuration>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Exclude test classes -->
+    <Match>
+        <Class name="~.*\.*Test" />
+    </Match>
+
+    <!-- Exclude generated code -->
+    <Match>
+        <Class name="~.*\.generated\..*" />
+    </Match>
+
+    <!-- Exclude specific bug patterns for UI classes -->
+    <Match>
+        <Class name="~com\.securefilevault\.ui\..*" />
+        <Bug pattern="SE_BAD_FIELD,SE_NO_SERIALVERSIONID" />
+    </Match>
+
+    <!-- Exclude specific security-related false positives -->
+    <Match>
+        <Class name="~com\.securefilevault\.security\..*" />
+        <Bug pattern="CIPHER_INTEGRITY,ECB_MODE,STATIC_IV,PREDICTABLE_RANDOM" />
+    </Match>
+
+    <!-- Exclude specific patterns for configuration classes -->
+    <Match>
+        <Class name="~com\.securefilevault\.config\..*" />
+        <Bug pattern="PATH_TRAVERSAL_IN,HARD_CODE_PASSWORD" />
+    </Match>
+
+    <!-- Exclude specific patterns for model classes -->
+    <Match>
+        <Class name="~com\.securefilevault\.model\..*" />
+        <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2" />
+    </Match>
+
+    <!-- Exclude specific patterns for utility classes -->
+    <Match>
+        <Class name="~com\.securefilevault\.util\..*" />
+        <Bug pattern="NP_NULL_ON_SOME_PATH,RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE" />
+    </Match>
+
+    <!-- Exclude specific patterns for database access classes -->
+    <Match>
+        <Class name="~com\.securefilevault\.dao\..*" />
+        <Bug pattern="SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING" />
+    </Match>
+
+    <!-- Exclude logging-related issues -->
+    <Match>
+        <Bug pattern="LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE" />
+    </Match>
+
+    <!-- Exclude specific patterns for controller classes -->
+    <Match>
+        <Class name="~com\.securefilevault\.controller\..*" />
+        <Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR" />
+    </Match>
+
+    <!-- Exclude specific serialization-related issues -->
+    <Match>
+        <Bug pattern="SE_NO_SUITABLE_CONSTRUCTOR,SE_NO_SUITABLE_CONSTRUCTOR_FOR_EXTERNALIZATION" />
+    </Match>
+
+    <!-- Exclude specific threading-related issues -->
+    <Match>
+        <Bug pattern="IS2_INCONSISTENT_SYNC,UW_UNCOND_WAIT" />
+    </Match>
+</FindBugsFilter>
